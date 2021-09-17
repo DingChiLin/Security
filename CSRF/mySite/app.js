@@ -32,7 +32,7 @@ app.post('/signin', (req, res) => {
         // if (result.length > 0) {
             // res.send(`<html><body>Welcome ${result[0].email}</body></html>`);
         // } else {
-    res.cookie("token", "my_login_token")
+    res.cookie("token", "my_login_token", {SameSite: "None", HttpOnly: false, HostOnly: false})
     res.send('sign in success');
         // }
     // })
@@ -58,7 +58,7 @@ app.use(function(err, req, res, next) {
     res.status(500).send('Internal Server Error');
 });
 
-port = 3000
+port = 5000
 app.listen(port, () => {console.log(`Listening on port: ${port}`);});
 
 module.exports = app;
