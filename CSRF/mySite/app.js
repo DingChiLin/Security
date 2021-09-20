@@ -2,6 +2,7 @@ require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const express = require('express');
 // const cors = require('cors');
+const {PORT} = process.env
 
 const app = express();
 
@@ -65,7 +66,6 @@ app.use(function(err, req, res, next) {
     res.status(500).send('Internal Server Error');
 });
 
-port = 5000
-app.listen(port, () => {console.log(`Listening on port: ${port}`);});
+app.listen(PORT, () => {console.log(`Listening on port: ${PORT}`);});
 
 module.exports = app;
