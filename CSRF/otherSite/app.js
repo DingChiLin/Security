@@ -1,6 +1,7 @@
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const express = require('express');
+const {ATTACK_SITE} = process.env
 // const cors = require('cors');
 
 const app = express();
@@ -8,14 +9,18 @@ const app = express();
 // app.use(cors());
 app.set('trust proxy', true);
 app.set('json spaces', 2);
+app.set('view engine', 'ejs');  
 
 app.use(cookieParser('123456789'));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.post('/', (req, res) => {
-    res.send("home page")
+app.get('/', (req, res) => {
+    res.render('attack', {  
+        title: '首頁',
+        attackSite: ATTACK_SITE
+    });  
 })
 
 // Page not found

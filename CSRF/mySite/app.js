@@ -44,8 +44,15 @@ app.post('/signin', (req, res) => {
 app.get('/post/delete', (req, res) => {
     console.log(req.query.id)
     console.log(req.cookies.token)
-    res.send("OK")
+    res.send("Get OK")
 });
+
+app.post('/post/delete', (req, res) => {
+    console.log(req.body)
+    console.log(req.cookies.token)
+    res.send("Post OK")
+});
+
 
 // Page not found
 app.use(function(req, res, next) {

@@ -1,8 +1,13 @@
 <html> 
     <body>
-	<!-- <a href='http://localhost:3000/post/delete?id=3'>開始測驗</a> -->
+	    <!-- <a href='http://localhost:3000/post/delete?id=3'>開始測驗</a> -->
 
-        <img src='http://localhost:3000/post/delete?id=3' width='0' height='0' />
-        <a href='/test'>開始測驗</a>
+        <!-- <img src='http://localhost:3000/post/delete?id=3' width='0' height='0' />
+        <a href='/test'>開始測驗</a> -->
+
+        <form action="http://localhost:3000/post/delete" method="POST">
+            <input type="hidden" name="id" value="3"/>
+            <input type="submit" value="開始測驗"/>
+        </form>
     </body>
 </html>
