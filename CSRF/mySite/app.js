@@ -33,7 +33,7 @@ app.post('/signin', (req, res) => {
         // if (result.length > 0) {
             // res.send(`<html><body>Welcome ${result[0].email}</body></html>`);
         // } else {
-    res.cookie("token", "my_login_token", {SameSite: "None", HttpOnly: false, HostOnly: false})
+    res.cookie("token", "my_login_token", {sameSite: 'Lax', httpOnly: false})
     res.send('sign in success');
         // }
     // })
